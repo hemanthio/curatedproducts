@@ -1,28 +1,18 @@
 "use client";
 
-import { supabase } from "../../lib/supabase";
+
 import React, { useEffect, useState } from "react";
 import Card from "../../components/Card";
 
+import useAgency from "../../hooks/useAgency"; // Import the custom hook
+
 export default function AgencyPage() {
-  const [products, setProducts] = useState([]);
+  const { products, error } = useAgency(); // Use the custom hook
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const { data, error } = await supabase
-        .from("products")
-        .select("*")
-        .filter("tags", "cs", '["agency"]');
-
-      if (error) {
-        console.error("Error fetching products:", error.message);
-      } else {
-        setProducts(data);
-      }
-    };
-
-    fetchProducts();
-  }, []);
+  if (error) {
+    console.error("Error fetching products:", error);
+    return <div>Error fetching products</div>; // Handle error case
+  }
 
   return (
     <div>
