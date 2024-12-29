@@ -16,7 +16,7 @@ export default function AgencyPage() {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-12">
+      <div className="flex flex-wrap gap-10  ">
         {products.map((product) => (
           <div key={product.id} >
             <Card product={product} />

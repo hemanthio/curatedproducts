@@ -1,9 +1,20 @@
-import React from 'react'
+import Navbar from "@/components/Navbar";
+import Categories from "@/components/Categories"; // Corrected import to match component name
 
-const page = () => {
+import React from "react";
+import Hero from "@/components/Hero";
+
+const Page = () => {
+  // Capitalized component name to follow React conventions
   return (
-    <div>page</div>
-  )
-}
+    <>
+      <div className="mx-7">
+        <Navbar />
+        <Categories />
+        <Hero />
+      </div>
+    </>
+  );
+};
 
-export default page
+export default Page; // Updated to use the corrected component name
