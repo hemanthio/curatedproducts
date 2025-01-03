@@ -1,16 +1,15 @@
 import { NextResponse } from "next/server";
 // import { supabase } from '/lib/supabase';
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "/lib/supabase";
 
-const supabaseUrl = 'https://sinhuqhzbdfdhuquxnxs.supabase.co';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  throw new Error("Supabase URL and Key must be provided as environment variables.");
+  throw new Error(
+    "Supabase URL and Key must be provided as environment variables."
+  );
 }
-
-
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function POST(request) {
   try {
