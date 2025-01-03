@@ -9,6 +9,11 @@ const Categories = () => {
 
   const sidebarData = [
     {
+      name: "Discover",
+      icon: "/icons/discover.svg", // Placeholder for the discover icon
+      link: "/",
+    },
+    {
       name: "Products",
       icon: "/icons/product.svg",
       link: "/products",
