@@ -1,10 +1,9 @@
- 
-'use client'
+"use client";
 
 import React from "react";
 import Hero from "../components/Hero";
 import Card from "../components/Card";
-import useAllTags from "../hooks/useAllTags"; 
+import useAllTags from "../hooks/useAllTags";
 
 const Page = () => {
   // Capitalized component name to follow React conventions
@@ -17,16 +16,14 @@ const Page = () => {
   return (
     <>
       <div className="">
-      
         <Hero />
         <div className="flex flex-wrap mt-10  gap-10  ">
-        {products.map((product) => (
-          <div key={product.id} >
-            <Card product={product} />
-          </div>
-        ))}
-      </div>
-
+          {products.map((product) => (
+            <div key={product.id}>
+              <Card product={product} />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
