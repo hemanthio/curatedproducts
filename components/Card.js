@@ -9,7 +9,7 @@ const Card = ({ product }) => {
   return (
       <a href={product.url} target="_blank" >
       <main className={GeistSans.className}>
-      <div className="border-2  relative font-medium bg-white flex flex-col gap-2  w-[300px] h-[230px] rounded-2xl p-6">
+      <div className="border-2  relative font-medium bg-white flex flex-col gap-2  w-[300px] h-[230px] max-sm:w-full max-sm:h-auto rounded-2xl p-6">
         <img
           src={product.image}
           alt={product.name}

@@ -17,7 +17,7 @@ const Page = () => {
     <>
       <div className="">
         <Hero />
-        <div className="flex flex-wrap mt-10  gap-10  ">
+        <div className="flex flex-wrap mt-10   gap-10  ">
           {products.map((product) => (
             <div key={product.id}>
               <Card product={product} />
