@@ -5,7 +5,7 @@ const Hero = () => {
     <div className='w-full  h-auto rounded-xl  top-[68px] bg-black p-4'>
         <div className='flex items-center max-sm:flex-col px-2 justify-between'>
             <div className='heading and email w-[380px] max-sm:w-full flex flex-col gap-12 tracking-[-0.7px] leading-[120%] text-white/70'>
-                <h1 className=' text-3xl  max-sm:text-2xl font-bold'>
+                <h1 className=' text-3xl  max-sm:text-3xl max-sm:pt-2 font-bold'>
                 Discover the Essentials for Your <span className='text-white'>Next Big Idea
                 </span> 
                 </h1>
