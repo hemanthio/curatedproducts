@@ -1,10 +1,28 @@
-import React from 'react'
+"use client";
 
-const page = () => {
+
+import React, { useEffect, useState } from "react";
+import Card from "../../components/Card";
+
+import useProducts from "../../hooks/useProducts"; // Import the custom hook
+
+export default function ProductsPage() {
+  const { products, error } = useProducts(); // Use the custom hook
+
+  if (error) {
+    console.error("Error fetching products:", error);
+    return <div>Error fetching products</div>; // Handle error case
+  }
+
   return (
-    <div className='bg-white' 
-    >page</div>
-  )
+    <div>
+      <div className="flex flex-wrap gap-10  ">
+        {products.map((product) => (
+          <div key={product.id} >
+            <Card product={product} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
-
-export default page

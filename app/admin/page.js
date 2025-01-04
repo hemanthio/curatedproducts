@@ -11,6 +11,7 @@ const AVAILABLE_TAGS = [
   { id: 'agency', label: 'Agency' },
   { id: 'course', label: 'Course' },
   { id: 'development', label: 'Development' },
+  { id: 'resource', label: 'Resource' },
   { id: 'design', label: 'Design' },
   { id: 'marketing', label: 'Marketing' },
   { id: 'saas', label: 'SaaS' },
