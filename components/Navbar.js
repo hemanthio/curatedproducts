@@ -5,8 +5,10 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { supabase } from "../lib/supabase";
 import { Menu, Search, X } from "lucide-react";
+import { useRouter } from "next/navigation"; // Import useRouter
 
 const Navbar = ({ toggleSidebar }) => {
+  const router = useRouter(); // Initialize useRouter
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
   const [mobileSearchVisible, setMobileSearchVisible] = useState(false);
@@ -43,6 +45,11 @@ const Navbar = ({ toggleSidebar }) => {
     setMobileSearchVisible(false);
   };
 
+  const handleSubmit = () => {
+    // Navigate to the submit page
+    router.push('/submit');
+  };
+
   return (
     <>
       <div className="fixed z-20 bg-white top-0 left-0 w-full flex items-center justify-between py-3 px-2 border-b border-gray-300">
@@ -66,7 +73,10 @@ const Navbar = ({ toggleSidebar }) => {
             value={searchTerm}
             onChange={handleSearch}
           />
-          <button className="bg-black text-white rounded-md mr-4 px-6 py-2">
+          <button 
+            className="bg-black text-white rounded-md mr-4 px-6 py-2"
+            onClick={handleSubmit} // Use handleSubmit to navigate
+          >
             Submit
           </button>
           {results.length > 0 && (
@@ -90,7 +100,7 @@ const Navbar = ({ toggleSidebar }) => {
         <div className="md:hidden flex items-center">
           <button 
             className="bg-black text-white rounded-md mr-2 px-4 py-2"
-            onClick={handleSearch}
+            onClick={handleSubmit} // Use handleSubmit to navigate
           >
             Submit
           </button>
@@ -115,7 +125,7 @@ const Navbar = ({ toggleSidebar }) => {
           />
           <button 
             className="bg-black text-white rounded-md mt-2 px-4 py-2"
-            onClick={handleSearch}
+            onClick={handleSubmit} // Use handleSubmit to navigate
           >
             Submit
           </button>
