@@ -6,7 +6,15 @@ import useSubmit from "../../hooks/useSubmit"; // Import the custom hook
 import { supabase } from "../../lib/supabase"; // Import supabase client
 
 export default function ProductsPage() {
-  const { products, error } = useSubmit(); // Use the custom hook
+  const { products: initialProducts, error } = useSubmit(); // Rename to avoid conflict
+  const [products, setProducts] = useState([]); // Add state management
+
+  // Set initial products when they're fetched
+  useEffect(() => {
+    if (initialProducts) {
+      setProducts(initialProducts);
+    }
+  }, [initialProducts]);
 
   const handleAccept = async (product) => {
     // Move product to the products table
