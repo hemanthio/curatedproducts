@@ -76,6 +76,7 @@ export async function POST(request) {
       {
         success: true,
         product: productData,
+        message: "Submitted successfully!",
       },
       { status: 201 }
     );
