@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -127,15 +126,17 @@ const Navbar = ({ toggleSidebar }) => {
           {results.length > 0 && (
             <div className="mt-2 border rounded-lg">
               {results.map((product) => (
-                <Link
+                <a // Change Link to a for external links
                   key={product.id}
                   href={product.url}
                   className="flex items-center p-2 hover:bg-gray-50 border-b"
                   onClick={clearSearch}
+                  target="_blank" // Open link in a new tab
+                  rel="noopener noreferrer" // Security best practice
                 >
                   <img src={product.image} alt={product.name} className="w-8 h-8 mr-2" />
                   <span>{product.name}</span>
-                </Link>
+                </a>
               ))}
             </div>
           )}
