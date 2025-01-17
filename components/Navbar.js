@@ -123,12 +123,7 @@ const Navbar = ({ toggleSidebar }) => {
             value={searchTerm}
             onChange={handleSearch}
           />
-          <button 
-            className="bg-black text-white rounded-md mt-2 px-4 py-2"
-            onClick={handleSubmit} // Use handleSubmit to navigate
-          >
-            Submit
-          </button>
+          
           {results.length > 0 && (
             <div className="mt-2 border rounded-lg">
               {results.map((product) => (
