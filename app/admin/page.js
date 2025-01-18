@@ -37,7 +37,7 @@ export default function AdminPage() {
     if (selectedTags.includes(tag.id)) {
       setSelectedTags(selectedTags.filter((id) => id !== tag.id));
     } else {
-      if (selectedTags.length < 5) {
+      if (selectedTags.length < 3) {
         setSelectedTags([...selectedTags, tag.id]);
       }
     }
@@ -219,7 +219,7 @@ export default function AdminPage() {
 
           <div className="space-y-2">
             <label className="block text-sm font-geist">
-              TAGS <span className="text-gray-500 text-xs">(Select 1-5)</span>
+              TAGS <span className="text-gray-500 text-xs">(Select 1-3)</span>
             </label>
             <div className="flex flex-wrap gap-2">
               {AVAILABLE_TAGS.map((tag) => (
