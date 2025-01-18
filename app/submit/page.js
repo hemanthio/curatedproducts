@@ -251,7 +251,7 @@ export default function SubmitPage() {
       />
       {showTooltip && (
         <div className="absolute z-10 w-48 p-2 bg-black text-white text-xs rounded-lg -right-2 top-6">
-          If you cannot find the tag, message me aryawebly on x
+          If you cannot find the tag, message me  on x aryawebly
           <div className="absolute -top-1 right-3 w-2 h-2 bg-black transform rotate-45" />
         </div>
       )}
