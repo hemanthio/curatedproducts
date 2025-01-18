@@ -22,7 +22,7 @@ const Card = ({ product }) => {
           <p className="text-[#6D6D6D]/90 leading-[130%] tracking-tight">
             {truncatedDescription}
           </p>
-          <div className="flex justify-between items-center mt-auto">
+          <div className="flex justify-between items-center max-sm:mt-3 mt-auto">
             <div className="flex flex-wrap gap-2">
               {product.tags.map((tag, index) => (
                 <span
