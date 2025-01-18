@@ -24,14 +24,30 @@ const Card = ({ product }) => {
           </p>
           <div className="flex justify-between items-center max-sm:mt-3 mt-auto">
             <div className="flex flex-wrap gap-2">
-              {product.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-xs px-2 py-1 border-gray-300 border rounded-md text-[#A59D9D]"
-                >
-                  {tag}
-                </span>
-              ))}
+              {product.tags.length > 2 ? (
+                <>
+                  {product.tags.slice(0, 2).map((tag, index) => (
+                    <span
+                      key={index}
+                      className="text-xs px-2 py-1 border-gray-300 border rounded-md text-[#A59D9D]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  <span className="text-xs px-2 py-1 border-gray-300 border rounded-md text-[#A59D9D]">
+                    +{product.tags.length - 2}
+                  </span>
+                </>
+              ) : (
+                product.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="text-xs px-2 py-1 border-gray-300 border rounded-md text-[#A59D9D]"
+                  >
+                    {tag}
+                  </span>
+                ))
+              )}
             </div>
             <img src="/icons/link.svg" alt="link" width={20} height={20} />
           </div>

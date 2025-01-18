@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+import { Info } from "lucide-react";
 
 const AVAILABLE_TAGS = [
   { id: "product", label: "Product" },
@@ -30,12 +31,13 @@ export default function SubmitPage() {
   const [submitError, setSubmitError] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleTagSelect = (tag) => {
     if (selectedTags.includes(tag.id)) {
       setSelectedTags(selectedTags.filter((id) => id !== tag.id));
     } else {
-      if (selectedTags.length < 5) {
+      if (selectedTags.length < 3) {
         setSelectedTags([...selectedTags, tag.id]);
       }
     }
@@ -238,9 +240,24 @@ export default function SubmitPage() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-geist">
-              TAGS <span className="text-gray-500 text-xs">(Select 1-5)</span>
-            </label>
+          <label className="block text-sm font-geist">
+  <div className="flex items-center gap-2">
+    TAGS <span className="text-gray-500 text-xs">(Select 1-3)</span>
+    <div className="relative inline-block">
+      <Info
+        className="h-4 w-4 text-gray-500 cursor-help"
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      />
+      {showTooltip && (
+        <div className="absolute z-10 w-48 p-2 bg-black text-white text-xs rounded-lg -right-2 top-6">
+          If you cannot find the tag, message me aryawebly on x
+          <div className="absolute -top-1 right-3 w-2 h-2 bg-black transform rotate-45" />
+        </div>
+      )}
+    </div>
+  </div>
+</label>
             <div className="flex flex-wrap gap-2">
               {AVAILABLE_TAGS.map((tag) => (
                 <button
