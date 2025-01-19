@@ -10,7 +10,7 @@ const Card = ({ product }) => {
   return (
     <a href={product.url} target="_blank">
       <main className={GeistSans.className}>
-        <div className="border-2  relative font-medium bg-white flex flex-col gap-2  w-[300px] h-[250px] max-sm:w-full max-sm:h-auto rounded-2xl p-6">
+        <div className="border-[1.9px] border-gray-300 relative font-medium bg-white flex flex-col gap-2  w-[300px] h-[250px] max-sm:w-full max-sm:h-auto rounded-2xl p-6">
           <img
             src={product.image}
             alt={product.name}
@@ -29,7 +29,7 @@ const Card = ({ product }) => {
                   {product.tags.slice(0, 2).map((tag, index) => (
                     <span
                       key={index}
-                      className="text-xs px-2 py-1 border-gray-300 border rounded-md text-[#A59D9D]"
+                      className="text-xs px-2 py-1 border-gray-300 border  rounded-md text-[#A59D9D]"
                     >
                       {tag}
                     </span>
