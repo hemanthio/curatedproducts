@@ -90,10 +90,15 @@ export default function SubmitPage() {
       return;
     }
 
-    if (description.split(" ").length > 15) {
-      setSubmitError("Description must not exceed 15 words.");
+    const descriptionWords = description.split(" ");
+    if (descriptionWords.length < 10) {
+      setSubmitError("Description must be at least 15 words.");
       setIsSubmitting(false);
       return;
+    }
+
+    if (descriptionWords.length > 15) {
+      setDescription(descriptionWords.slice(0, 20).join(" ") + "..");
     }
 
     try {
@@ -167,14 +172,14 @@ export default function SubmitPage() {
           <div className="space-y-2">
             <label className="block text-sm font-geist">DESCRIPTION 
             <span className="text-red-500">*</span>
-            <span className="text-gray-500 text-xs">(max 15 words allowed)</span></label>
+            <span className="text-gray-500 text-xs">(min 10 words, max 15 words)</span></label>
            
             <textarea
               name="description"
               required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Write about your website (max 15 words)"
+              placeholder="Write about your website (min 15 words)"
               className="border rounded-lg p-2 w-full"
             />
             
