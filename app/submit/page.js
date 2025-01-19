@@ -91,14 +91,10 @@ export default function SubmitPage() {
     }
 
     const descriptionWords = description.split(" ");
-    if (descriptionWords.length < 10) {
-      setSubmitError("Description must be at least 15 words.");
+    if (descriptionWords.length < 10 || descriptionWords.length > 15) {
+      setSubmitError("Description must be between 10 and 15 words.");
       setIsSubmitting(false);
       return;
-    }
-
-    if (descriptionWords.length > 15) {
-      setDescription(descriptionWords.slice(0, 20).join(" ") + "..");
     }
 
     try {
@@ -179,7 +175,7 @@ export default function SubmitPage() {
               required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Write about your website (min 15 words)"
+              placeholder="Write about your website (min 10 words, max 15 words)"
               className="border rounded-lg p-2 w-full"
             />
             
