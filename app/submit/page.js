@@ -175,7 +175,7 @@ export default function SubmitPage() {
               required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Write about your website (min 10 words, max 15 words)"
+              placeholder="Write about your website "
               className="border rounded-lg p-2 w-full"
             />
             
