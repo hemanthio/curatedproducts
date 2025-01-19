@@ -4,7 +4,7 @@ import { GeistSans } from "geist/font/sans";
 const Card = ({ product }) => {
   const truncatedDescription =
     product.description.split(" ").length > 10
-      ? product.description.split(" ").slice(0, 15).join(" ") + "..."
+      ? product.description.split(" ").slice(0, 15).join(" ") + "."
       : product.description;
 
   return (
