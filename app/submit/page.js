@@ -408,7 +408,7 @@ export default function SubmitPage() {
     }
 
     const descriptionWords = description.split(" ");
-    if (descriptionWords.length < 8 || descriptionWords.length > 12) {
+    if (descriptionWords.length < 8 || descriptionWords.length > 16) {
       setSubmitError("Description must be between 8 and 12 words.");
       setIsSubmitting(false);
       return;
@@ -484,7 +484,7 @@ export default function SubmitPage() {
             <label className="block text-sm font-geist">
               DESCRIPTION 
               <span className="text-red-500">*</span>
-              <span className="text-gray-500 text-xs">(min 8 words, max 12 words)</span>
+              <span className="text-gray-500 text-xs">(min 8 words, max 16 words)</span>
             </label>
             <textarea
               name="description"
