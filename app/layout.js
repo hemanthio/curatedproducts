@@ -23,8 +23,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />{" "}
         {/* Updated the icon path to favicon.ico */}
       </head>
-      <body className={GeistSans.className}>
       <CSPostHogProvider>
+      <body className={GeistSans.className}>
+      
         <div className="min-h-screen bg-white">
           <Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
 
@@ -41,8 +42,9 @@ export default function RootLayout({ children }) {
             </main>
           </div>
         </div>
-        </CSPostHogProvider>
+      
       </body>
+      </CSPostHogProvider>
     </html>
   );
 }
