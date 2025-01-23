@@ -4,7 +4,12 @@ import { GeistSans } from "geist/font/sans";
 import { useState } from "react";
 import Categories from "../components/Categories";
 import Navbar from "../components/Navbar";
-import { CSPostHogProvider } from "./providers";
+import { PostHogProvider } from "./providers";
+import dynamic from 'next/dynamic'
+
+const PostHogPageView = dynamic(() => import('../components/PostHogPageView'), {
+  ssr: false,
+})
 
 const metadata = {
   title: "CuratedProducts",
@@ -23,7 +28,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />{" "}
         {/* Updated the icon path to favicon.ico */}
       </head>
-      <CSPostHogProvider>
+      
       <body className={GeistSans.className}>
       
         <div className="min-h-screen bg-white">
@@ -38,13 +43,16 @@ export default function RootLayout({ children }) {
 
             {/* Content Area */}
             <main className="flex-1 transition-all duration-300 md:ml-64 p-6">
+            <PostHogProvider>
+            <PostHogPageView />
               {children}
+              </PostHogProvider>
             </main>
           </div>
         </div>
       
       </body>
-      </CSPostHogProvider>
+      
     </html>
   );
 }
