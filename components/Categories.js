@@ -1,6 +1,4 @@
 
-
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -103,11 +101,9 @@ const Categories = ({ isOpen, onClose }) => {
             ${isDesignSubItem ? "text-[#3b3b3b]" : ""}
           `}
           onClick={() => {
-            if (!hasSubItems) {
-              setActiveItem(item.link);
-              router.push(item.link);
-              if (isMobile && onClose) onClose();
-            }
+            setActiveItem(item.link);
+            router.push(item.link);
+            if (isMobile && onClose) onClose();
           }}
         >
           {item.icon && (
