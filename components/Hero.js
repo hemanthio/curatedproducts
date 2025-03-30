@@ -9,12 +9,12 @@ const Hero = () => {
                 Discover the Essentials for Your <span className='text-white'>Next Big Idea
                 </span> 
                 </h1>
-                <div className='w-full flex items-between'>
+                <div className='w-full flex max-md:flex-col max-md:gap-2 max-md:justify-center max-md:items-start items-between'>
                     <input type="text" 
                     placeholder='Enter your email '
                     className='bg-white/30 pl-2 rounded-md max-sm:w-[200px]  w-[250px] h-[42px]' 
                     name="email" />
-                    <button  className='bg-white text-black font-medium  px-2 rounded-md ml-2 max-sm:text-[14px]  py-3'>Get notified</button>
+                    <button  className='bg-white text-black font-medium  px-2 rounded-md ml-2 max-md:ml-0 max- max-sm:text-[14px]  py-3'>Get notified</button>
                 </div>
             </div>
             <div className='heroimage pt-12'>
