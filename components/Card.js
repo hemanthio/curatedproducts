@@ -11,15 +11,17 @@ const Card = ({ product }) => {
     <a href={product.url} target="_blank">
       <main className={GeistSans.className}>
         <div className="border-[1.9px] max-sm:border-[1.2px] border-gray-300 relative font-medium bg-white flex flex-col gap-2  w-[300px] h-[250px] max-sm:w-full max-sm:h-auto rounded-2xl p-6">
+        <div className="flex items-center gap-3">
           <img
             src={product.image}
             alt={product.name}
-            className="w-10 h-10 object-cover"
+            className="w-10 h-10 object-cover rounded-md"
           />
-          <h2 className="text-lg  font-semibold color-[#0F0F0F] opacity-90">
+          <h2 className="text-lg tracking-tight font-semibold color-[#0F0F0F] opacity-90">
             {product.name}
           </h2>
-          <p className="text-[#6D6D6D]/90 leading-[130%] tracking-tight">
+          </div>
+          <p className="text-[#6D6D6D]/90 mt-3 leading-[130%] tracking-tight">
             {truncatedDescription}
           </p>
           <div className="flex justify-between items-center max-sm:mt-3 mt-auto">
