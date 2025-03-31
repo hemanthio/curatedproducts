@@ -56,8 +56,8 @@ export default function SubmitPage() {
     setImageError("");
 
     if (file) {
-      if (file.size > 20 * 1024) {
-        setImageError("Image size must be less than 20KB");
+      if (file.size > 100 * 1024) {
+        setImageError("Image size must be less than 100KB");
         setImageFile(null);
         setImagePreview("");
         e.target.value = "";
@@ -207,7 +207,7 @@ export default function SubmitPage() {
           <div className="space-y-2">
             <label className="block text-sm font-geist">
               BRAND LOGO <span className="text-red-500">*</span>
-              <span className="text-gray-500 text-xs">(Max size: 20KB)</span>
+              <span className="text-gray-500 text-xs">(Max size: 100KB)</span>
             </label>
             <div
               className="border-2 border-dashed rounded-lg p-4 text-center"
