@@ -14,7 +14,7 @@ const PostHogPageView = dynamic(() => import('../components/PostHogPageView'), {
 const metadata = {
   title: "CuratedProducts",
   description:
-    "Discover the Essentials from collection of curated websites for Your Next Big Idea",
+    "Discover the Essentials from collection of curated websites for Your Next Big Idea ,a collection of handpicked websites—products, agencies, courses, and resources—all in one place. ",
 };
 
 export default function RootLayout({ children }) {
@@ -25,8 +25,11 @@ export default function RootLayout({ children }) {
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        <link rel="icon" href="/favicon.ico" />{" "}
-        {/* Updated the icon path to favicon.ico */}
+        <link
+          rel="icon"
+          href="favicon.ico"
+          type="image/x-icon"
+        />
       </head>
       
       <body className={GeistSans.className}>
