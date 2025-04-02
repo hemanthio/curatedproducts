@@ -5,6 +5,20 @@ import Hero from "../components/Hero";
 import Card from "../components/Card";
 import useAllTags from "../hooks/useAllTags";
 
+const metadata ={
+  openGraph :{
+    images : [
+      {
+        url : "https://www.curatedproducts.tech/api/og",
+        width: 1200,
+        height: 630,
+        alt :"hello"
+
+      }
+    ]
+  }
+}
+
 const Page = () => {
   // Capitalized component name to follow React conventions
   const { products, error } = useAllTags(); // Use the custom hook
