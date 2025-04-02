@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
         />
         <meta
           property="og:image"
-          content="https://sinhuqhzbdfdhuquxnxs.supabase.co/storage/v1/object/public/images//curatedproducts.png"
+          content="https://sinhuqhzbdfdhuquxnxs.supabase.co/storage/v1/object/public/images//curatedproduct.png"
         />
 
         {/* Twitter */}
