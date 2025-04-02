@@ -23,9 +23,9 @@ const metadata = {
       }
     ]
   },
-  title: "CuratedProducts",
+  title: "CuratedProducts | Discover the Essentials from the collection of curated websites for Your Next Big Idea ",
   description:
-    "Discover the Essentials from collection of curated websites for Your Next Big Idea ,a collection of handpicked websites—products, agencies, courses, and resources—all in one place. ",
+    "Discover the Essentials from the collection of curated websites for Your Next Big Idea ,a collection of handpicked websites—products, agencies, courses, and resources—all in one place. ",
 };
 
 export default function RootLayout({ children }) {
