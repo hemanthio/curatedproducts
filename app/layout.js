@@ -12,6 +12,17 @@ const PostHogPageView = dynamic(() => import("../components/PostHogPageView"), {
 });
 
 const metadata = {
+  openGraph :{
+    images : [
+      {
+        url : "https://www.curatedproducts.tech/api/og",
+        width: 1200,
+        height: 630,
+        alt :"hello"
+
+      }
+    ]
+  },
   title: "CuratedProducts",
   description:
     "Discover the Essentials from collection of curated websites for Your Next Big Idea ,a collection of handpicked websites—products, agencies, courses, and resources—all in one place. ",
