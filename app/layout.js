@@ -23,7 +23,7 @@ const metadata = {
       }
     ]
   },
-  title: "CuratedProducts | Discover the Essentials from the collection of curated websites for Your Next Big Idea ",
+  title: "CuratedProducts",
   description:
     "Discover the Essentials from the collection of curated websites for Your Next Big Idea ,a collection of handpicked websites—products, agencies, courses, and resources—all in one place. ",
 };
