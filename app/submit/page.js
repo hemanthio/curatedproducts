@@ -23,6 +23,8 @@ const CATEGORY_TAGS = [
   { id: "web", label: "Web" },
   { id: "analytics", label: "Analytics" },
   { id: "ai", label: "AI" },
+  { id: "framer", label: "Framer" },
+  { id: "figma", label: "Figma" },
 ];
 
 export default function SubmitPage() {
