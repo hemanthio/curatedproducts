@@ -6,6 +6,7 @@ import Categories from "../components/Categories";
 import Navbar from "../components/Navbar";
 import { PostHogProvider } from "./providers";
 import dynamic from "next/dynamic";
+import { Analytics } from '@vercel/analytics/next';
 
 const PostHogPageView = dynamic(() => import("../components/PostHogPageView"), {
   ssr: false,
@@ -85,6 +86,7 @@ export default function RootLayout({ children }) {
               <PostHogProvider>
                 <PostHogPageView />
                 {children}
+                <Analytics />
               </PostHogProvider>
             </main>
           </div>
