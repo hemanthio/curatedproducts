@@ -13,6 +13,52 @@ const Navbar = ({ toggleSidebar }) => {
   const [mobileSearchVisible, setMobileSearchVisible] = useState(false);
   const searchRef = useRef(null);
 
+  const searchInputRef = useRef(null);
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setResults([]);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    
+    // Add keyboard event listener for slash key
+    const handleKeyDown = (event) => {
+      // Check if the user is not currently typing in an input or textarea
+      const activeElement = document.activeElement;
+      const isTyping = 
+        activeElement.tagName === 'INPUT' || 
+        activeElement.tagName === 'TEXTAREA' || 
+        activeElement.isContentEditable;
+      
+      // If slash key is pressed and user is not typing in a field
+      if (event.key === '/' && !isTyping) {
+        event.preventDefault();
+        // Focus the search input
+        if (window.innerWidth >= 768) {
+          // For desktop
+          searchInputRef.current?.focus();
+        } else {
+          // For mobile
+          setMobileSearchVisible(true);
+          // Use setTimeout to ensure the mobile search input is rendered
+          setTimeout(() => {
+            document.querySelector('.mobile-search-input')?.focus();
+          }, 10);
+        }
+      }
+    };
+    
+    document.addEventListener("keydown", handleKeyDown);
+    
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -65,15 +111,20 @@ const Navbar = ({ toggleSidebar }) => {
 
         {/* Desktop Search */}
         <div className="hidden md:flex items-center gap-3" ref={searchRef}>
+        <div className="relative">
           <input
             type="text"
             placeholder="Search products"
-            className="border rounded-lg p-2 text-[#808080] bg-[#ebebeb]"
+            ref={searchInputRef}
+            className="border rounded-lg p-2 tracking-tight text-[#808080] bg-[#ebebeb]"
             value={searchTerm}
             onChange={handleSearch}
+            
           />
+          <span className="absolute right-2 px-2 rounded-md top-2  bg-gray-300">/</span>
+          </div>
           <button 
-            className="bg-black text-white rounded-md mr-4 px-6 py-2"
+            className="bg-black text-white tracking-tight rounded-lg mr-4 px-6 py-2"
             onClick={handleSubmit} // Use handleSubmit to navigate
           >
             Submit
