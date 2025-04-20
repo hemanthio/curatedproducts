@@ -4,13 +4,10 @@ import { GeistSans } from "geist/font/sans";
 import { useState } from "react";
 import Categories from "../components/Categories";
 import Navbar from "../components/Navbar";
-import { PostHogProvider } from "./providers";
+
 import dynamic from "next/dynamic";
 import { Analytics } from '@vercel/analytics/next';
 
-const PostHogPageView = dynamic(() => import("../components/PostHogPageView"), {
-  ssr: false,
-});
 
 const metadata = {
   openGraph :{
@@ -83,11 +80,11 @@ export default function RootLayout({ children }) {
 
             {/* Content Area */}
             <main className="flex-1 transition-all duration-300 md:ml-64 p-6">
-              <PostHogProvider>
-                <PostHogPageView />
+             
+              
                 {children}
                 <Analytics />
-              </PostHogProvider>
+              
             </main>
           </div>
         </div>
